@@ -1,32 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState } from "react"
+
+const username = 'Luciano';
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  // 這個是最基本的 state hook
+  const [count, setCount] = useState<number>(0);
+  // 有以下兩種方式來做 state change，細微上的不同會再進階的課程中提及
+  const minus = () => setCount(count - 1);
+  const plus = () => setCount((pre) => pre + 1);
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div>
+      Hello {username}!
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: "space-around"
+        }}
+      >
+        <button onClick={minus}>-</button>
+        <p>{count}</p>
+        <button onClick={plus}>+</button>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </div>
   )
 }

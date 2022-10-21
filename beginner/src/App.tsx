@@ -1,4 +1,5 @@
 import { useState } from "react"
+import ContextExample from "./components/ContextExample";
 import Counter from "./components/Counter";
 import FormExample from "./components/FormExample";
 import RefExample from "./components/RefExample";
@@ -17,6 +18,7 @@ function App() {
       <UseEffectExample />
       <FormExample />
       <RefExample />
+      <ContextExample />
     </div>
   )
 }

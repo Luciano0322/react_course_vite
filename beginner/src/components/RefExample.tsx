@@ -14,7 +14,7 @@ const RefExample: FC = () => {
   // 可以優化react的運行。
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // 當你打開 console 的時候你就能理解為何會說他能優化的部分了
+  // 當你打開以下兩個 console 的時候你就能理解為何會說他能優化的部分了
   // console.log('with state',state);
   // console.log('ref', inputRef);
   
@@ -24,6 +24,7 @@ const RefExample: FC = () => {
   // 詳細文章支援： https://medium.com/hannah-lin/react-hook-%E7%AD%86%E8%A8%98-useref-c628cbf0d7fb
   return (
     <div>
+      <div><p>step 4: useRef 使用差異</p></div>
       <fieldset>
         <legend>用 useState 綁定</legend>
         <input 
@@ -31,7 +32,14 @@ const RefExample: FC = () => {
           value={state}
           onChange={onStateChange}
         />
-        <button onClick={() => console.log(state)}>check</button>
+        <button 
+          onClick={() => console.log(state)}
+          style={{
+            margin: '0 1rem'
+          }}
+        >
+          check
+        </button>
       </fieldset>    
       <fieldset>
         <legend>用 useState 綁定</legend>
@@ -39,7 +47,14 @@ const RefExample: FC = () => {
           type="text" 
           ref={inputRef}
         />
-        <button onClick={() => console.log(inputRef.current?.value)}>check</button>
+        <button 
+          onClick={() => console.log(inputRef.current?.value)}
+          style={{
+            margin: '0 1rem'
+          }}
+        >
+          check
+        </button>
       </fieldset>    
     </div>
   )

@@ -141,6 +141,9 @@ const FormExample: FC = () => {
         </fieldset>
         <button
           type='submit'
+          style={{
+            margin: '1rem 0 0 0'
+          }}
         >
           送出
         </button>

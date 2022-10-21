@@ -31,6 +31,9 @@ const UseEffectExample: FC = () => {
   return (
     <>
       <div className='f-b-c'>
+        <p>step 2: 非常重要的 side effect hook, 有進階的解釋與練習</p>
+      </div>
+      <div className='f-b-c'>
         <p>
           {`計時器： ${count}`}
         </p>

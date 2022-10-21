@@ -47,7 +47,7 @@ export const useFetch = (options: any) => {
   // 那上述三種，則是採 by reference, 你可以採 useMemo hook 的方式封裝你的 options boject
   // 或是直接往下取到 url 字串來做比對，如下
   useEffect(() => {
-    console.log('useFetch useEffect');
+    // console.log('useFetch useEffect');
     if(options.url) {
       let isCancelled = false;
       fetch(options.url)

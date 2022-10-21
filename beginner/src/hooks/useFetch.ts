@@ -47,15 +47,23 @@ export const useFetch = (options: any) => {
   // 那上述三種，則是採 by reference, 你可以採 useMemo hook 的方式封裝你的 options boject
   // 或是直接往下取到 url 字串來做比對，如下
   useEffect(() => {
+    console.log('useFetch useEffect');
     if(options.url) {
-      console.log('useFetch useEffect');
+      let isCancelled = false;
       fetch(options.url)
       .then((res) => res.json())
       .then((json) => {
-        // 這裡為另外一個常見可能的錯誤
-        options.onSuccess?.(json)
-        setData(json)
-      })
+        if (!isCancelled) {
+          options.onSuccess?.(json)
+          setData(json)
+        }
+      });
+      // cleanup function，useEffect 是一個會重複執行的 hook，
+      // 當他重複的同時如果沒有將上次暫存的結果 reset 或清空就很容易造成不必要的暫存浪費
+      // 這裡只是示範多一個參數來讓 fetch 判斷是否要將資料重複寫入 state
+      return () => {
+        isCancelled = true;
+      }
     }
   },[options.url])
   

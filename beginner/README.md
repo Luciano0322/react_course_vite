@@ -8,3 +8,4 @@
 3. 透過登入系統表單讓大家理解 React state management 的 hook function --useReducer
 4. 透過比較原本基礎的 input 綁定 useState 與 input 綁定 useRef 的差異，讓大家理解 useRef hook 的優點及使用方式。
 5. 透過簡單的資料傳遞做出子層結構，讓大家理解是如何透過 useContext hook, 拿到原本應由 props 層層傳遞下來的資料的。
+6. 透過強制更改 input value 來解釋 useEffect 與 useLayoutEffect 的差異。

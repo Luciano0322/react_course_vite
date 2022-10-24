@@ -4,6 +4,7 @@ import Counter from "./components/Counter";
 import FormExample from "./components/FormExample";
 import RefExample from "./components/RefExample";
 import UseEffectExample from "./components/UseEffectExample";
+import UseLayoutEffectExample from "./components/UseLayoutEffectExample";
 
 const username = 'Luciano';
 
@@ -19,6 +20,7 @@ function App() {
       <FormExample />
       <RefExample />
       <ContextExample />
+      <UseLayoutEffectExample />
     </div>
   )
 }

@@ -1,8 +1,17 @@
-import React, { memo, useState } from 'react'
+import React, { memo, useMemo, useState } from 'react'
 
 // 子層接 props 參數，觸發渲染
-const Swatch = ({ color }:{ color: string }) => {
-  console.log(`Swatch 渲染 ${color}`);
+// React.memo
+// const Swatch = ({ color }:{ color: string }) => {
+// useMemo example
+const Swatch = ({ 
+    params
+  }:{ 
+    params: {
+      color: string
+    } 
+  }) => {
+  console.log(`Swatch 渲染 ${params.color}`);
   
   return (
     <div 
@@ -11,7 +20,7 @@ const Swatch = ({ color }:{ color: string }) => {
         width: 75,
         height: 75,
         borderRadius: '50%',
-        backgroundColor: color,
+        backgroundColor: params.color,
       }} 
     />
   )
@@ -22,6 +31,10 @@ const Swatch = ({ color }:{ color: string }) => {
 const MemoedSwatch = memo(Swatch)
 // 在引入上面的 MemoedSwatch 之後會發現原先重複渲染的問題消失了，
 // component props 進去的值沒有改變的話就不會觸發重新渲染
+// 當傳入值由 string 改為 object 的型態時，React.memo 的解決辦法如下
+// const MemoedSwatch = memo(Swatch, (prevProps, nextProps) => {
+//   return prevProps.params.color === nextProps.params.color;
+// });
 
 // 母層
 // 預設一開始情況下會發現每次按按鈕都會使子曾也重新渲染，
@@ -34,6 +47,11 @@ const MemoExample = () => {
   const [color, setColor] = useState<string>('red')
   console.log(`Memo 渲染次數 ${appRenderIdx}`);
   
+  // useMemo 的範例
+  // 後面的 dependency array 和 useEffect 的概念是一樣的
+  // 也是採用 shallow compare 的比較機制
+  const params = useMemo(() => ({ color }), [color])
+
   return (
     <div>
       <h4>step 8: Memo & useMemo 範例</h4>
@@ -52,9 +70,14 @@ const MemoExample = () => {
       {/* default */}
       {/* <Swatch color='red' /> */}
       {/* with Memo */}
-      <MemoedSwatch color={color} />
+      <MemoedSwatch params={params} />
     </div>
   )
 }
 
 export default MemoExample
+
+// 考量使用 useMemo 的時機，基本上掌握要點
+// 1. 基本上資料型別不要單單只是 by value 的資料型別
+// 2. 回傳資料為物件、陣列、或是 callback function
+// 3. 回傳資料會因帶入參數重組產稱新的值

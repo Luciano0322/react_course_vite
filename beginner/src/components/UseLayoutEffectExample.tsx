@@ -19,7 +19,7 @@ const UseLayoutEffectExample: FC = () => {
   }, [])
   return (
     <div>
-      <h5>step 6: useLayoutEffect 概念</h5>
+      <h4>step 6: useLayoutEffect 概念</h4>
       <fieldset>
         <legend>透過 console 查看先後順序</legend>
         <input type="text" value="jack" readOnly ref={inputRef}/>

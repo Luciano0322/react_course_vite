@@ -11,7 +11,7 @@ const Counter: FC<{user: string}> = ({user}) => {
   return (
     <>
       <h5>{`${user} play counter`}</h5>
-      <p>step 1: 這是 react 中最常用也最容易搞懂的 hook</p>
+      <h4>step 1: 這是 react 中最常用也最容易搞懂的 hook</h4>
       <div
         className='f-b-c'
       >

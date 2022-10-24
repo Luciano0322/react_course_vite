@@ -2,6 +2,7 @@ import { useState } from "react"
 import ContextExample from "./components/ContextExample";
 import Counter from "./components/Counter";
 import FormExample from "./components/FormExample";
+import ImperativeHandleExp from "./components/ImperativeHandleExp";
 import RefExample from "./components/RefExample";
 import UseEffectExample from "./components/UseEffectExample";
 import UseLayoutEffectExample from "./components/UseLayoutEffectExample";
@@ -21,6 +22,7 @@ function App() {
       <RefExample />
       <ContextExample />
       <UseLayoutEffectExample />
+      <ImperativeHandleExp />
     </div>
   )
 }

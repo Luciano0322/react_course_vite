@@ -24,7 +24,7 @@ const RefExample: FC = () => {
   // 詳細文章支援： https://medium.com/hannah-lin/react-hook-%E7%AD%86%E8%A8%98-useref-c628cbf0d7fb
   return (
     <div>
-      <div><p>step 4: useRef 使用差異</p></div>
+      <div><h4>step 4: useRef 使用差異</h4></div>
       <fieldset>
         <legend>用 useState 綁定</legend>
         <input 

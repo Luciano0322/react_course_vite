@@ -70,7 +70,7 @@ const FormExample: FC = () => {
   return (
     <>
       <div>
-        <p>step 3: 表單應用的範例（登入系統）</p>
+        <h4>step 3: 表單應用的範例（登入系統）</h4>
       </div>
       <form onSubmit={levelSend}>
         <fieldset>

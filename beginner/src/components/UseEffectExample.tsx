@@ -31,7 +31,7 @@ const UseEffectExample: FC = () => {
   return (
     <>
       <div className='f-b-c'>
-        <p>step 2: 非常重要的 side effect hook, 有進階的解釋與練習</p>
+        <h4>step 2: 非常重要的 side effect hook, 有進階的解釋與練習</h4>
       </div>
       <div className='f-b-c'>
         <p>

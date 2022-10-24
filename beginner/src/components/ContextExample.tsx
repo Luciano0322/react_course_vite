@@ -42,7 +42,7 @@ const ContextExample: FC = () => {
     <UserContext.Provider 
       value={user}
     >
-      <p>step 5: Context Provider & useContext 範例</p>
+      <h4>step 5: Context Provider & useContext 範例</h4>
       <PrintName/>
       <button
         onClick={() => setUser({

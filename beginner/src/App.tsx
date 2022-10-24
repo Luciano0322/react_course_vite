@@ -3,6 +3,7 @@ import ContextExample from "./components/ContextExample";
 import Counter from "./components/Counter";
 import FormExample from "./components/FormExample";
 import ImperativeHandleExp from "./components/ImperativeHandleExp";
+import MemoExample from "./components/MemoExample";
 import RefExample from "./components/RefExample";
 import UseEffectExample from "./components/UseEffectExample";
 import UseLayoutEffectExample from "./components/UseLayoutEffectExample";
@@ -23,6 +24,7 @@ function App() {
       <ContextExample />
       <UseLayoutEffectExample />
       <ImperativeHandleExp />
+      <MemoExample />
     </div>
   )
 }

@@ -2,6 +2,8 @@
 ## 基礎管念  
 我有盡量按照順序去打 git 節點，基本上按照畫面順序一步一步往下進行應該是沒問題  
 大家可以依照畫面上的順序進行學習  
+這個 project 的教學內容為基本 React 所有的 hook function 的應用
+也有一些基本的 component 拆分與資料傳遞
 
 ### 基礎 hook  
 1. 透過簡單的 counter 帶大家理解 useState 的處理方式。

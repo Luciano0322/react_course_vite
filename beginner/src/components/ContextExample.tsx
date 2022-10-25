@@ -2,10 +2,11 @@ import { FC, useContext, useState } from 'react'
 import UserContext, { UserState } from '../store';
 
 // 這裡解釋一下資料傳遞的部分，通常 components 之間要傳遞資料，必須透過 props
-// 的方式傳遞，那麼就會有一種情況，當有一份資料旭要傳遞到子層的子曾使用時，
-// 作為中間層的元進就必須當接線生的角色，即便那份資料你根本不需要也必須做
-// 數量不多還好，但如果層數億多就會很困擾。
+// 的方式傳遞，那麼就會有一種情況，當有一份資料需要傳遞到子層的子層使用時，
+// 作為中間層的元件就必須當接線生的角色，即便那份資料它根本不需要也必須接應 props 並往下傳
+// 數量不多還好，但如果層數一多就會很困擾。
 // 在早期還沒有 hook function 的時候，要打破這樣的規則就必須使用 redux 的套件，
+// 關於 Redux 的部分各位可以參考我 it 邦鐵人賽的文章 link: https://ithelp.ithome.com.tw/users/20129020/ironman/5360
 // 但在 hook function 出現之後，藉著 context & useContext hook 就可以很輕鬆的去做到直接傳遞的事情
 
 // const initialState = {

@@ -1,15 +1,17 @@
-import React, { memo, useMemo, useState } from 'react'
+import React, { memo, useCallback, useMemo, useState } from 'react'
 
 // 子層接 props 參數，觸發渲染
 // React.memo
 // const Swatch = ({ color }:{ color: string }) => {
 // useMemo example
 const Swatch = ({ 
-    params
+    params,
+    onClick // for useCallback
   }:{ 
     params: {
       color: string
-    } 
+    },
+    onClick: () => void // for useCallback
   }) => {
   console.log(`Swatch 渲染 ${params.color}`);
   
@@ -22,6 +24,7 @@ const Swatch = ({
         borderRadius: '50%',
         backgroundColor: params.color,
       }} 
+      onClick={onClick}
     />
   )
 }
@@ -51,10 +54,12 @@ const MemoExample = () => {
   // 後面的 dependency array 和 useEffect 的概念是一樣的
   // 也是採用 shallow compare 的比較機制
   const params = useMemo(() => ({ color }), [color])
+  // useCallback 的範例
+  const onClick = useCallback(() => {},[]) 
 
   return (
     <div>
-      <h4>step 8: Memo & useMemo 範例</h4>
+      <h4>step 8: Memo & useMemo & useCallback 範例</h4>
       <div className='f-b-c'>
         <button 
           onClick={() => setAppRenderIdx(appRenderIdx + 1)}
@@ -70,7 +75,10 @@ const MemoExample = () => {
       {/* default */}
       {/* <Swatch color='red' /> */}
       {/* with Memo */}
-      <MemoedSwatch params={params} />
+      <MemoedSwatch 
+        params={params} 
+        onClick={onClick} //for useCallback
+      />
     </div>
   )
 }
@@ -79,5 +87,9 @@ export default MemoExample
 
 // 考量使用 useMemo 的時機，基本上掌握要點
 // 1. 基本上資料型別不要單單只是 by value 的資料型別
-// 2. 回傳資料為物件、陣列、或是 callback function
+// 2. 回傳資料為物件、陣列
 // 3. 回傳資料會因帶入參數重組產稱新的值
+
+// 使用 useCallback 的時機點
+// 1. 當你需要回傳相同的 function 的時候
+// 2. useMemo 用來處理陣列 & 物件，useCallback 用來處理 function

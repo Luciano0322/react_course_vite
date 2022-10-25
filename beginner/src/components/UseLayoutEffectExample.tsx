@@ -6,7 +6,7 @@ import { FC, useEffect, useLayoutEffect, useRef } from 'react'
 const UseLayoutEffectExample: FC = () => {
   const inputRef = useRef<HTMLInputElement | null>(null)
   useEffect(() => {
-    console.log("UseEffect", inputRef.current);
+    // console.log("UseEffect", inputRef.current);
     if(inputRef.current) {
       inputRef.current.value = "Tom"
       console.log("After useEffect", inputRef.current.value);

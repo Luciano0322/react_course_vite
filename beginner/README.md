@@ -16,5 +16,5 @@
 ***  
 ### 進階 hook  
 這邊的 hook 會比較偏向效能優化的 hook 比較進階一點，但也算是常見使用。  
-8. React.memo 的運作原理與 useMemo 的使用狀況，理解如何降低重複渲染相同資料的情況。
-9. useCallback 的運作原理與實際操作
+8. React.memo 的運作原理與 useMemo 的使用狀況，理解如何降低重複渲染相同資料的情況。  
+9. useCallback 的運作原理與實際操作。

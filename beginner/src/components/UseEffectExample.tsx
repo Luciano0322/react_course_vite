@@ -20,7 +20,7 @@ const UseEffectExample: FC = () => {
       // 這邊的return 代表的是原本 class component 的 componentWillUnmount() 的地方
       return () => window.clearInterval(timer)
     }
-    // 第二個參數為 dependencies array，再陣列裡面的參數會使得 useEffect 去判斷該欄位的執事否需要更新，
+    // 第二個參數為 dependencies array，在陣列裡面的參數會使得 useEffect 去判斷該欄位的值是否需要更新，
     // 如果需要則會依據該參數是否更新而觸發第一個帶入的 update function 而執行重新渲染。
   }, [start])
   // 這裡留有一個比較進階的用法，也許可以解答一些人在使用這個 hook 所面臨到的問題。

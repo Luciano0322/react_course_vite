@@ -30,7 +30,7 @@ const Swatch = ({
 }
 
 // 使用 react.memo
-// react.memo 本身就是一個 H.O.C. 的形式，不情楚 HOC 的朋友可以搜尋 react HOC
+// react.memo 本身就是一個 H.O.C. 的形式，不清楚 HOC 的朋友可以搜尋 react HOC
 const MemoedSwatch = memo(Swatch)
 // 在引入上面的 MemoedSwatch 之後會發現原先重複渲染的問題消失了，
 // component props 進去的值沒有改變的話就不會觸發重新渲染
@@ -40,7 +40,7 @@ const MemoedSwatch = memo(Swatch)
 // });
 
 // 母層
-// 預設一開始情況下會發現每次按按鈕都會使子曾也重新渲染，
+// 預設一開始情況下會發現每次按按鈕都會使子層也重新渲染，
 // 即使 props 的值根本沒變
 const MemoExample = () => {
   const [appRenderIdx, setAppRenderIdx] = useState<number>(0)
@@ -51,7 +51,7 @@ const MemoExample = () => {
   console.log(`Memo 渲染次數 ${appRenderIdx}`);
   
   // useMemo 的範例
-  // 後面的 dependency array 和 useEffect 的概念是一樣的
+  // 後面的 dependencies array 和 useEffect 的概念是一樣的
   // 也是採用 shallow compare 的比較機制
   const params = useMemo(() => ({ color }), [color])
   // useCallback 的範例

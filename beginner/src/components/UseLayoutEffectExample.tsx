@@ -12,7 +12,7 @@ const UseLayoutEffectExample: FC = () => {
       console.log("After useEffect", inputRef.current.value);
     }
   }, [inputRef.current])
-  // 本質上使用與 useEffect 一樣，但他會比useEffect早觸發
+  // 本質上使用與 useEffect 一樣，但它會比useEffect早觸發
   useLayoutEffect(() => {
     // console.log("UseLayoutEffect");
     console.log("UseLayoutEffect", inputRef.current?.value);

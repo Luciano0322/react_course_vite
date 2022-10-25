@@ -5,7 +5,7 @@ const Counter: FC<{user: string}> = ({user}) => {
   // {user} 也可以單改用 props 去接，但在引用的同時會多一層
   // 這個是最基本的 state hook
   const [count, setCount] = useState<number>(0);
-  // 有以下兩種方式來做 state change，細微上的不同會再進階的課程中提及
+  // 有以下兩種方式來做 state change，細微上的不同會在進階的課程中提及
   const minus = () => setCount(count - 1);
   const plus = () => setCount((pre) => pre + 1);
   return (

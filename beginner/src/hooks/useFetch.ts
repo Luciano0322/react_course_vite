@@ -44,7 +44,7 @@ export const useFetch = (options: any) => {
   // },[options])
   // 這個錯誤很常見，主要是 javascript 本身比較機制的問題，在 dependencies array 中的機制採 shallow compare：
   // 除 function, object, array 以外，都是 by value
-  // 那上述三種，則是採 by reference, 你可以採 useMemo hook 的方式封裝你的 options boject
+  // 那上述三種，則是採 by reference, 你可以採 useMemo hook 的方式封裝你的 options object
   // 或是直接往下取到 url 字串來做比對，如下
   useEffect(() => {
     // console.log('useFetch useEffect');

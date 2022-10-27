@@ -30,7 +30,7 @@ const FormExample: FC = () => {
   // level 3
   // 這裡要來介紹另外一個 React 的 hook function: useReducer,
   // 這個 hook 主要也是借鏡 redux 的 data flux 改進出來的 hook function
-  // 在 2017 年的 React conf, 由 redux 的共同創辦人 Dan Abramov 現場演示如何使用這些 hook function
+  // 在 2018 年的 React conf, 由 redux 的共同創辦人 Dan Abramov 現場演示如何使用這些 hook function
   // 其主要概念就是用來簡化每個 component 會產生許多各自的 state, 如此往復發展必然會成為一個很大的整理問題
   // 那接著解釋他怎麼運作的吧！
 

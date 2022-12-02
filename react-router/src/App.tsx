@@ -1,5 +1,6 @@
 import { FC } from "react"
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom"
+import Navbar from "./components/Navbar"
 import About from "./pages/About"
 import Contact from "./pages/Contact"
 import Home from "./pages/Home"
@@ -15,6 +16,7 @@ const App: FC = () => {
 
   return (
     <BrowserRouter>
+      <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />

@@ -13,4 +13,4 @@ yarn add react-router-dom
 
 2. 安裝完成後我們先整理一下資料夾將用不到的 file 先整理一下，然後進入到 App.tsx 裡面引入 BrowserRouter 將整個 app 的 dom 包住。
 
-3. 
+3. Routes 是所有 Route 的集合，如果要調整路由的部分就要用這個方式調整。

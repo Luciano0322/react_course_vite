@@ -4,6 +4,9 @@ import Navbar from "./components/Navbar"
 import About from "./pages/About"
 import Contact from "./pages/Contact"
 import Home from "./pages/Home"
+import NotFonud from "./pages/NotFonud"
+import Shirts from "./pages/Shirts"
+import ShirtWid from "./pages/Shirts/ShirtWid"
 import Shop from "./pages/Shop"
 
 // BrowserRouter 就像 redux 的 provider 一樣，必須在最上層來處理
@@ -20,8 +23,15 @@ const App: FC = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
-        <Route path="shop" element={<Shop />} />
+        <Route path="shop" element={<Shop />} >
+          <Route path="shirts">
+            {/* nesting 的做法 */}
+            <Route index element={<Shirts/>} />
+            <Route path=":id" element={<ShirtWid/>} />
+          </Route>
+        </Route>
         <Route path="contact" element={<Contact />} />
+        <Route path="*" element={<NotFonud />} />
       </Routes>
     </BrowserRouter>
   )

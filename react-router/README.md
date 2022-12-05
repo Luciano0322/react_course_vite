@@ -14,3 +14,5 @@ yarn add react-router-dom
 2. 安裝完成後我們先整理一下資料夾將用不到的 file 先整理一下，然後進入到 App.tsx 裡面引入 BrowserRouter 將整個 app 的 dom 包住。
 
 3. Routes 是所有 Route 的集合，如果要調整路由的部分就要用這個方式調整。
+
+4. 可以先習慣原本nesting的做法，這樣轉移到useRoutes hook的做法就不會很陌生了，但通常使用上來說還是會建議拆成 hook function 的做法會比較好維護。

@@ -2,7 +2,10 @@ import React from 'react'
 import { useRoutes } from 'react-router-dom'
 import Layout from './components/Layout'
 import About from './pages/About'
+import Contact from './pages/Contact'
 import Home from './pages/Home'
+import Pants from './pages/Pants'
+import PantWid from './pages/Pants/PantWid'
 import Shirts from './pages/Shirts'
 import ShirtWid from './pages/Shirts/ShirtWid'
 import Shop from './pages/Shop'
@@ -29,9 +32,21 @@ const routes = [
           {
             path: "shirts/:id",
             element: <ShirtWid/>,
-          }
+          },
+          {
+            path: "pants",
+            element: <Pants />,
+          },
+          {
+            path: "pants/:id",
+            element: <PantWid />,
+          },
         ]
       },
+      {
+        path: "contact",
+        element: <Contact />,
+      }
     ]
   },
 ]

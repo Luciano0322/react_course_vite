@@ -9,6 +9,9 @@ const Shop: FC = () => {
         <li>
           <Link to="shirts">shirts</Link>
         </li>
+        <li>
+          <Link to="pants">pants</Link>
+        </li>
       </ul>
       {/* Outlet 可以對該路徑下需要切分段落的 component 做一個分流的整理 */}
       <Outlet/>

@@ -18,3 +18,5 @@ yarn add react-router-dom
 4. 可以先習慣原本nesting的做法，這樣轉移到useRoutes hook的做法就不會很陌生了，但通常使用上來說還是會建議拆成 hook function 的做法會比較好維護。  
 
 5. useRoutes的示範，如何分離路由組建以利後續管理。
+
+6. useSearchParams的示範，於contact page，有一個簡單的搜尋功能。

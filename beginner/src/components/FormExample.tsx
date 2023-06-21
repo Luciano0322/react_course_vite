@@ -1,5 +1,13 @@
-import { ChangeEvent, FC, useReducer, useState } from 'react'
+import { ChangeEvent, FC, useReducer, useRef, useState } from 'react'
 import level3Reducer, { Level3ActionTypes, level3Default, PWD_L3_CHANGE, USER_L3_CHANGE } from '../reducers/level3Reducer'
+
+// const useCustForm = ({
+//   defaultValue
+// }: {
+//   defaultValue: Record<string, string>
+// }) => {
+  
+// }
 
 const FormExample: FC = () => {
   // 我們來總結以上學到 hook 實際演練表單綁定的狀況吧
@@ -60,11 +68,15 @@ const FormExample: FC = () => {
     level3Default
   )
 
+  const user_lv4Ref = useRef<HTMLInputElement>(null)
+  const pwd_lv4Ref = useRef<HTMLInputElement>(null)
+
   const levelSend = (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('level1', {username, password}); //level1
-    console.log('level2', level2) // level2
-    console.log(level3) // level3
+    console.log('level1 ', {username, password}); //level1
+    console.log('level2 ', level2) // level2
+    console.log('level3 ', level3) // level3
+    console.log('level4 ', {user_lv4: user_lv4Ref.current?.value, pwd_lv4: pwd_lv4Ref.current?.value});
   }
 
   return (
@@ -136,6 +148,26 @@ const FormExample: FC = () => {
               type="password"
               value={level3.pwd_lv3}
               onChange={(e: ChangeEvent<HTMLInputElement>) => dispatch({type: Level3ActionTypes.PWD_L3_CHANGE, payload: e.target.value})}
+            />
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Level 4</legend>
+          <div>
+            <label htmlFor="user_lv4">username</label>
+            <input 
+              id="user_lv4"
+              name="user_lv4" 
+              ref={user_lv4Ref}
+            />
+          </div>
+          <div>
+            <label htmlFor="pwd_lv4">password</label>
+            <input 
+              id="pwd_lv4"
+              name="pwd_lv4"
+              type="password"
+              ref={pwd_lv4Ref}
             />
           </div>
         </fieldset>

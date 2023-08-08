@@ -8,6 +8,9 @@ const Navbar:FC = () => {
         <li>
           <Link to="/">Home</Link>
         </li>
+        <li>
+          <Link to="/register">register 用法</Link>
+        </li>
       </ul>
     </div>
   )

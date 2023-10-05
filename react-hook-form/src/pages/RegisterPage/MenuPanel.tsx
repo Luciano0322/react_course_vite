@@ -32,6 +32,7 @@ interface ExpForm {
 const MenuPanel: FC = () => {
   const { 
     register,
+    unregister,
     watch,
     formState: { errors }, 
     handleSubmit
@@ -64,10 +65,13 @@ const MenuPanel: FC = () => {
         </div>
         <div className='my-2 p-2'>
           <label className='mr-2'> 升級套餐 </label>
+          {/* 這裡透過unregister清掉不必要的欄位, 透過register的綁定onChange來觸發額外事件 */}
           <input 
             className='bg-gray-100 p-2 rounded-lg' 
             type='checkbox'
-            {...register('isUpgrade')}
+            {...register('isUpgrade', {
+              onChange: (e) => !e.target.checked && unregister(["appetizer", "dessert"])
+            })}
           />
         </div>
         {/* 透過watch可以查看欄位現值 */}

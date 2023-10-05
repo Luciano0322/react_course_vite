@@ -27,7 +27,7 @@ const DefaultPanel:FC = () => {
           />
         </div>
         <div className='my-2 p-2'>
-        <label htmlFor="exampleRequired">範例(必填)：</label>
+          <label htmlFor="exampleRequired">範例(必填)：</label>
           {/* 在 standard HTML 裡面可以讓他吃 validation rules */}
           <input 
             className='bg-gray-100 p-2 rounded-lg'

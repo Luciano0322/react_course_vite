@@ -15,7 +15,7 @@ export const Tab: React.FC<React.PropsWithChildren<ITabProps>> = props => {
   const { activeTab, setActiveTab } = useTabs();
   return (
     <div 
-      className={activeTab === props.label ? `border-b-2 border-red-400` : ``}
+      className={activeTab === props.label ? `border-b-2 border-red-400 px-4 py-2` : `px-4 py-2`}
     >
       <button onClick={() => setActiveTab(props.label)}>
         {props.children}
